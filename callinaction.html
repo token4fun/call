@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call in Action Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="form-container">
+        <h2>Submit Your Token Project</h2>
+        <form id="tokenForm">
+            <select>
+                <option selected disabled>Select your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <input type="text" placeholder="Project name">
+            <input type="text" placeholder="Token Symbol">
+            <input type="text" placeholder="Short description">
+            <input type="text" placeholder="Telegram">
+            <input type="text" placeholder="Website">
+            <input type="text" placeholder="Contract Address">
+            <input type="text" placeholder="Image Link (optional)">
+            <input type="text" placeholder="@yourname">
+
+            <div class="buttons">
+                <img src="seepromo.png" id="seePromo" alt="See Promo">
+                <img src="buycall.png" id="buyCall" alt="Buy Call">
+            </div>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('seePromo').addEventListener('click', function() {
+            window.open('seepromo.html', '_blank');
+        });
+
+        document.getElementById('buyCall').addEventListener('click', function() {
+            const formData = new FormData(document.getElementById('tokenForm'));
+            let message = `Project Name: ${formData.get('projectName')}\nToken Symbol: ${formData.get('tokenSymbol')}\nTelegram: ${formData.get('telegram')}\nPlease send 0.1 BNB to 0xda434bb7CC9D082C9a6f544e9732e7e92Ad9C406`;
+            window.location.href = `tg://msg?text=${encodeURIComponent(message)}&to=@rfdtk`;
+        });
+    </script>
+</body>
+</html>
