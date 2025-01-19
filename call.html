@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Your Token</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="container">
+        <div class="left">
+            <img src="call.gif" alt="Call Promotion">
+        </div>
+        <div class="right">
+            <h2>Call now your token project</h2>
+            <p><strong>Connect your Binance Smart Chain (BSC) and BNB wallet</strong> to promote your project in Telegram call channels and active groups within minutes.</p>
+            <button class="btn" id="connectWallet">Let’s Go</button>
+        </div>
+    </section>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <img src="metamask.png" alt="Metamask">
+            <h3>Metamask</h3>
+            <p>Connect with the provider in your browser.</p>
+            <button onclick="connectMetaMask()">Connect</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('connectWallet').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'block';
+        });
+
+        function connectMetaMask() {
+            // Simulando conexão
+            window.location.href = "CallinAction.html";
+        }
+    </script>
+</body>
+</html>
